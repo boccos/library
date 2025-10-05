@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    background-color: #fffade;
+    font-family: sans-serif;
+    margin: 2em;
+}
+
+#main_body{
+    display: flex;
+}
