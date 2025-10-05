@@ -1,10 +1,76 @@
 body {
-    margin: 0;
-    background-color: #fffade;
-    font-family: sans-serif;
-    margin: 2em;
+  margin: 0;
+  background: #fffade;
+  font-family: 'Nunito', 'Quicksand', 'Comfortaa', 'Baloo 2', sans-serif
 }
 
-#main_body{
+.header {
+  height: 60px;
+  background: #f6d365;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-weight: 700;
+}
+
+#main_body {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  padding-top: 24px;
+}
+
+#container {
+  flex: 1 1 auto;
+  padding: 12px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 6px;
+  min-height: 60vh;
+  overflow: auto;
+}
+
+.sidebar {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+#openButton {
+  padding: 8px;
+  background: #2b6cff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#newBookForm {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+dialog {
+  padding: 12px;
+  border-radius: 6px;
+  position: static
+}
+
+.book_card{
+    padding: 5px;
+    background-color: rgb(255, 208, 122);
+    border: #2b6cff solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    max-width: 300px;
+    gap: 2em;
+}
+
+#container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
 }

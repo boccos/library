@@ -1,4 +1,5 @@
 const myLibrary = [];
+document.addEventListener('DOMContentLoaded', () => createCard(myLibrary));
 
 
 function Book(title, author, pages, year, type, isRead) {
@@ -91,3 +92,8 @@ function getInfo(book){
 
   return card;
 }
+
+addBookToLibrary(new Book('Pride and Prejudice', 'Jane Austen', 448, 1813, 'HardCopy', false));
+addBookToLibrary(new Book('Great Expectations', 'Charles Dickens', 544, 1861, 'HardCopy', false));
+addBookToLibrary(new Book('Jane Eyre', 'Charlotte Brontë', 576, 1847, 'HardCopy', false));
+addBookToLibrary(new Book('Wuthering Heights', 'Emily Brontë', 416, 1847, 'HardCopy', false));
