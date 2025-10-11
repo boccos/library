@@ -16,10 +16,6 @@ form.addEventListener("submit", (submission) => {
 
     addBookToLibrary(newBook)
 
-    createCard(myLibrary)
-
     form.reset();
     dialog.close()
 })
-
-// const cancelBook = document.getElementById("closeButton")

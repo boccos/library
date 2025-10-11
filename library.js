@@ -2,7 +2,8 @@ const myLibrary = [];
 document.addEventListener('DOMContentLoaded', () => createCard(myLibrary));
 
 
-function Book(title, author, pages, year, type, isRead) {
+class Book {
+  constructor(title, author, pages, year, type, isRead) {
   this.title = title
   this.author = author
   this.pages = pages
@@ -10,20 +11,43 @@ function Book(title, author, pages, year, type, isRead) {
   this.type = type
   this.isRead = isRead
   this.id = crypto.randomUUID()
+  }
 }
+const addBook = document.getElementById("openButton")
+const dialog = document.getElementById("dialog")
+const form = document.getElementById("newBookForm")
 
+addBook.addEventListener("click", () => dialog.show())
+form.addEventListener("submit", (submission) => {
+    submission.preventDefault()
+    const title = form.title.value
+    const author = form.author.value
+    const pages = form.pages.value
+    const year = form.year.value
+    const type = form.type.value
+    const isRead = form.isRead.checked
+
+    const newBook = new Book(title, author, pages, year, type, isRead)
+
+    addBookToLibrary(newBook)
+
+    form.reset();
+    dialog.close()
+})
 function addBookToLibrary(newBook) {
   myLibrary.push(newBook)
+  const container = document.getElementById("container")
+  container.appendChild(getInfo(newBook))
 }
 
-function createCard(catalogue){
+/*function createCard(catalogue){
   const container = document.getElementById("container")
   container.innerHTML = ""
   catalogue.forEach(book => {
     container.appendChild(getInfo(book))
   })
 }
-
+*/
 function getInfo(book){
   const card = document.createElement("div")
   card.setAttribute("class", "book_card")
