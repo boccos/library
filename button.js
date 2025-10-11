@@ -1,8 +1,8 @@
 const addBook = document.getElementById("openButton")
-const dialog = document.querySelector("dialog")
+const dialog = document.getElementById("dialog")
 const form = document.getElementById("newBookForm")
 
-addBook.addEventListener("click", () => dialog.show())
+addBook.addEventListener("click", () => dialog.classList.add('show'))
 form.addEventListener("submit", (submission) => {
     submission.preventDefault()
     const title = form.title.value
@@ -16,6 +16,6 @@ form.addEventListener("submit", (submission) => {
 
     addBookToLibrary(newBook)
 
+    dialog.classList.remove('show');
     form.reset();
-    dialog.close()
 })
